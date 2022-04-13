@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="image/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Frontend Mentor | Calculator app</title>
+</head>
+
+<body id="theme1">
+    <main>
+        <div class="calApp">
+            <div class="calApp-top">
+                <h1 class="calApp-top-title">calc</h1>
+                <div class="calApp-top-uppercase">theme</div>
+                <div class="calApp-top-switch" id="theme">
+                    <div class="calApp-top-switch-box" id="circle-theme">
+                        <div id="theme_1">1</div>
+                        <div id="theme_2">2</div>
+                        <div id="theme_3">3</div>
+                    </div>
+                    <div class="calApp-top-switch-btn" id="ball">
+                        <div class="calApp-top-switch-btn-rounded"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="calApp-screen">
+                <div class="calApp-screen-historial" id="calHistory"></div>
+                <input class="calApp-screen-result" aria-label="output" placeholder="0" disabled id="calScreen">
+            </div>
+            <div class="calApp-keypad">
+                <div class="calApp-keypad-grid">
+                    <button class="calApp-keypad-grid-btn-number" value="7">7</button>
+                    <button class="calApp-keypad-grid-btn-number" value="8">8</button>
+                    <button class="calApp-keypad-grid-btn-number" value="9">9</button>
+                    <button class="calApp-keypad-grid-btn-delete">del</button>
+
+                    <button class="calApp-keypad-grid-btn-number" value="4">4</button>
+                    <button class="calApp-keypad-grid-btn-number" value="5">5</button>
+                    <button class="calApp-keypad-grid-btn-number" value="6">6</button>
+                    <button class="calApp-keypad-grid-btn-operation" value="+">+</button>
+
+                    <button class="calApp-keypad-grid-btn-number" value="1">1</button>
+                    <button class="calApp-keypad-grid-btn-number" value="2">2</button>
+                    <button class="calApp-keypad-grid-btn-number" value="3">3</button>
+                    <button class="calApp-keypad-grid-btn-operation" value="-">-</button>
+
+                    <button class="calApp-keypad-grid-btn-operation" value=".">.</button>
+                    <button class="calApp-keypad-grid-btn-number" value="0">0</button>
+                    <button class="calApp-keypad-grid-btn-operation" value="/">/</button>
+                    <button class="calApp-keypad-grid-btn-operation" value="*">x</button>
+
+                    <button class="calApp-keypad-grid-btn-reset">reset</button>
+                    <button class="calApp-keypad-grid-btn-result">=</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+<script src="js/theme.js"></script>
+
+</html>
