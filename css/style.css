@@ -5,17 +5,16 @@
 }
 
 :root {
-  --btn-del-reset-theme-1: hsl(225, 21%, 49%);
-  --desaturated-dark-blue: hsl(224, 28%, 35%);
+  --background-btn-del-reset-theme-1: hsl(225, 21%, 49%);
+  --shadow-btn-del-reset-theme-1: hsl(224, 28%, 35%);
   --key-theme-1: hsl(6, 63%, 50%);
   --dark-key-theme-1: hsl(6, 70%, 34%);
-  --light-grayish-orange: hsl(30, 25%, 89%);
-  --grayish-orange: hsl(28, 16%, 65%);
+  --background-btn-theme-1: hsl(30, 25%, 89%);
+  --shadow-btn-theme-1: hsl(28, 16%, 65%);
 }
 
 :root {
-  --text-theme-1: hsl(221, 14%, 31%);
-  --white: hsl(0, 0, 100%);
+  --number-theme-1: hsl(221, 14%, 31%);
 }
 
 :root {
@@ -26,17 +25,16 @@
 }
 
 :root {
-  --dark-moderate-cyan: hsl(185, 42%, 37%);
-  --very-dark-cyan: hsl(185, 58%, 25%);
+  --background-btn-del-reset-theme-2: hsl(185, 42%, 37%);
+  --shadow-btn-del-reset-theme-2: hsl(185, 58%, 25%);
   --key-theme-2: hsl(25, 98%, 40%);
   --dark-key-theme-2: hsl(25, 99%, 27%);
-  --light-grayish-yellow: hsl(45, 7%, 89%);
-  --dark-grayish-orange: hsl(35, 11%, 61%);
+  --background-btn-theme-2: hsl(45, 7%, 89%);
+  --shadow-btn-theme-2: hsl(35, 11%, 61%);
 }
 
 :root {
-  --very-dark-grayish-yellow: hsl(60, 10%, 19%);
-  --white: hsl(0, 0, 100%);
+  --text-theme-2: hsl(60, 10%, 19%);
 }
 
 :root {
@@ -45,18 +43,17 @@
 }
 
 :root {
-  --dark-violet: hsl(281, 89%, 26%);
-  --vivid-magenta: hsl(285, 91%, 52%);
+  --background-btn-del-reset-theme-3: hsl(281, 89%, 26%);
+  --shadow-btn-del-reset-theme-3: hsl(285, 91%, 52%);
   --key-theme-3: hsl(176, 100%, 44%);
-  --soft-key-theme-3: hsl(177, 92%, 70%);
-  --very-dark-violet: hsl(268, 47%, 21%);
-  --dark-magenta: hsl(290, 70%, 36%);
+  --dark-key-theme-3: hsl(177, 92%, 70%);
+  --background-btn-theme-3: hsl(268, 47%, 21%);
+  --shadow-btn-theme-3: hsl(290, 70%, 36%);
 }
 
 :root {
   --text-theme-3: hsl(52, 100%, 62%);
-  --very-dark-blue: hsl(198, 20%, 13%);
-  --white: hsl(0, 0, 100%);
+  --text-result-theme-3: hsl(198, 20%, 13%);
 }
 
 :root {
@@ -76,10 +73,24 @@ html {
 
 body {
   font-family: 'Spartan', sans-serif;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .calApp {
-  padding: 2.2rem;
+  width: 90%;
   max-width: 500px;
   margin: 0 auto;
 }
@@ -180,7 +191,6 @@ body {
 }
 
 .calApp-keypad {
-  background: var(--toggle-theme-1);
   border-radius: 1rem;
 }
 
@@ -189,27 +199,21 @@ body {
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 1.5rem;
   padding: 2.2rem;
 }
 
 .calApp-keypad-grid button {
-  color: var(--text-theme-1);
   height: 7rem;
-  border-radius: 1rem;
+  border-radius: .5rem;
+  border: none;
+  cursor: pointer;
 }
 
 .calApp-keypad-grid-btn-reset, .calApp-keypad-grid-btn-delete, .calApp-keypad-grid-btn-result {
   text-transform: uppercase;
   font-size: 2rem;
-}
-
-.calApp-keypad-grid-btn-reset, .calApp-keypad-grid-btn-delete {
-  background: var(--btn-del-reset-theme-1);
-}
-
-.calApp-keypad-grid-btn-reset, .calApp-keypad-grid-btn-delete, .calApp-keypad-grid-btn-result {
-  color: var(--white) !important;
+  color: #fff;
 }
 
 .calApp-keypad-grid-btn-reset {
@@ -222,11 +226,19 @@ body {
   -ms-grid-column: 3;
   -ms-grid-column-span: 2;
   grid-column: 3/5;
-  background: var(--key-theme-1);
 }
 
 .calApp-keypad-grid-btn-number, .calApp-keypad-grid-btn-operation {
   font-size: 3.2rem;
+}
+
+@media (min-width: 975px) {
+  .calApp-keypad button {
+    height: 5rem;
+  }
+  .calApp-keypad-grid {
+    gap: 2.2rem;
+  }
 }
 
 #theme1 {
@@ -249,12 +261,41 @@ body {
   background: var(--screen-theme-1);
 }
 
+#theme1 .calApp-keypad {
+  background: var(--toggle-theme-1);
+}
+
+#theme1 .calApp-keypad-grid-btn-number, #theme1 .calApp-keypad-grid-btn-operation {
+  background: var(--background-btn-theme-1);
+  color: var(--number-theme-1);
+  -webkit-box-shadow: 0 4px 0 var(--shadow-btn-theme-1);
+          box-shadow: 0 4px 0 var(--shadow-btn-theme-1);
+}
+
+#theme1 .calApp-keypad-grid-btn-reset, #theme1 .calApp-keypad-grid-btn-delete {
+  background: var(--background-btn-del-reset-theme-1);
+  -webkit-box-shadow: 0 4px 0 var(--shadow-btn-del-reset-theme-1);
+          box-shadow: 0 4px 0 var(--shadow-btn-del-reset-theme-1);
+}
+
+#theme1 .calApp-keypad-grid-btn-reset, #theme1 .calApp-keypad-grid-btn-delete {
+  background: var(--background-btn-del-reset-theme-1);
+  -webkit-box-shadow: 0 4px 0 var(--shadow-btn-del-reset-theme-1);
+          box-shadow: 0 4px 0 var(--shadow-btn-del-reset-theme-1);
+}
+
+#theme1 .calApp-keypad-grid-btn-result {
+  background: var(--key-theme-1);
+  -webkit-box-shadow: 0 4px 0 var(--dark-key-theme-1);
+          box-shadow: 0 4px 0 var(--dark-key-theme-1);
+}
+
 #theme2 {
   background: var(--main-theme-2);
 }
 
 #theme2 .calApp {
-  color: #000;
+  color: var(--text-theme-2);
 }
 
 #theme2 .calApp-top-switch-btn {
@@ -267,6 +308,35 @@ body {
 
 #theme2 .calApp-screen {
   background: var(--screen-theme-2);
+}
+
+#theme2 .calApp-keypad {
+  background: var(--toggle-theme-2);
+}
+
+#theme2 .calApp-keypad-grid-btn-number, #theme2 .calApp-keypad-grid-btn-operation {
+  background: var(--background-btn-theme-2);
+  color: var(--text-theme-2);
+  -webkit-box-shadow: 0 4px 0 var(--shadow-btn-theme-2);
+          box-shadow: 0 4px 0 var(--shadow-btn-theme-2);
+}
+
+#theme2 .calApp-keypad-grid-btn-reset, #theme2 .calApp-keypad-grid-btn-delete {
+  background: var(--background-btn-del-reset-theme-2);
+  -webkit-box-shadow: 0 4px 0 var(--shadow-btn-del-reset-theme-2);
+          box-shadow: 0 4px 0 var(--shadow-btn-del-reset-theme-2);
+}
+
+#theme2 .calApp-keypad-grid-btn-reset, #theme2 .calApp-keypad-grid-btn-delete {
+  background: var(--background-btn-del-reset-theme-2);
+  -webkit-box-shadow: 0 4px 0 var(--shadow-btn-del-reset-theme-2);
+          box-shadow: 0 4px 0 var(--shadow-btn-del-reset-theme-2);
+}
+
+#theme2 .calApp-keypad-grid-btn-result {
+  background: var(--key-theme-2);
+  -webkit-box-shadow: 0 4px 0 var(--dark-key-theme-2);
+          box-shadow: 0 4px 0 var(--dark-key-theme-2);
 }
 
 #theme3 {
@@ -287,5 +357,35 @@ body {
 
 #theme3 .calApp-screen {
   background: var(--toggle-theme-3);
+}
+
+#theme3 .calApp-keypad {
+  background: var(--toggle-theme-3);
+}
+
+#theme3 .calApp-keypad-grid-btn-number, #theme3 .calApp-keypad-grid-btn-operation {
+  background: var(--background-btn-theme-3);
+  color: var(--text-theme-3);
+  -webkit-box-shadow: 0 4px 0 var(--shadow-btn-theme-3);
+          box-shadow: 0 4px 0 var(--shadow-btn-theme-3);
+}
+
+#theme3 .calApp-keypad-grid-btn-reset, #theme3 .calApp-keypad-grid-btn-delete {
+  background: var(--background-btn-del-reset-theme-3);
+  -webkit-box-shadow: 0 4px 0 var(--shadow-btn-del-reset-theme-3);
+          box-shadow: 0 4px 0 var(--shadow-btn-del-reset-theme-3);
+}
+
+#theme3 .calApp-keypad-grid-btn-reset, #theme3 .calApp-keypad-grid-btn-delete {
+  background: var(--background-btn-del-reset-theme-3);
+  -webkit-box-shadow: 0 4px 0 var(--shadow-btn-del-reset-theme-3);
+          box-shadow: 0 4px 0 var(--shadow-btn-del-reset-theme-3);
+}
+
+#theme3 .calApp-keypad-grid-btn-result {
+  background: var(--key-theme-3);
+  -webkit-box-shadow: 0 4px 0 var(--dark-key-theme-3);
+          box-shadow: 0 4px 0 var(--dark-key-theme-3);
+  color: var(--text-result-theme-3);
 }
 /*# sourceMappingURL=style.css.map */

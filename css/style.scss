@@ -15,9 +15,9 @@
 
 :root{
     // key background
---btn-del-reset-theme-1: hsl(225, 21%, 49%);
+--background-btn-del-reset-theme-1: hsl(225, 21%, 49%);
 // key shadow
---desaturated-dark-blue: hsl(224, 28%, 35%);
+--shadow-btn-del-reset-theme-1: hsl(224, 28%, 35%);
 
 // key background, toggle
 --key-theme-1: hsl(6, 63%, 50%);
@@ -25,16 +25,15 @@
 --dark-key-theme-1: hsl(6, 70%, 34%);
 
 // key background
---light-grayish-orange: hsl(30, 25%, 89%);
+--background-btn-theme-1: hsl(30, 25%, 89%);
 // key shadow
---grayish-orange: hsl(28, 16%, 65%);
+--shadow-btn-theme-1: hsl(28, 16%, 65%);
 }
 
 // text
 
 :root{
---text-theme-1: hsl(221, 14%, 31%);
---white: hsl(0, 0, 100%);
+--number-theme-1: hsl(221, 14%, 31%);
 }
 
 // Theme 2
@@ -53,9 +52,9 @@
 
 :root{
     // key background
---dark-moderate-cyan: hsl(185, 42%, 37%);
+--background-btn-del-reset-theme-2: hsl(185, 42%, 37%);
 // key shadow
---very-dark-cyan: hsl(185, 58%, 25%);
+--shadow-btn-del-reset-theme-2: hsl(185, 58%, 25%);
 
 // key background, toggle
 --key-theme-2: hsl(25, 98%, 40%);
@@ -63,17 +62,15 @@
 --dark-key-theme-2: hsl(25, 99%, 27%);
 
 // key background
---light-grayish-yellow: hsl(45, 7%, 89%);
+--background-btn-theme-2: hsl(45, 7%, 89%);
 // key shadow
---dark-grayish-orange: hsl(35, 11%, 61%);
+--shadow-btn-theme-2: hsl(35, 11%, 61%);
 }
 
 // text 
 
 :root{
---very-dark-grayish-yellow: hsl(60, 10%, 19%);
-// text
---white: hsl(0, 0, 100%);
+--text-theme-2: hsl(60, 10%, 19%);
 }
 
 // Theme 3
@@ -89,28 +86,26 @@
 
 :root{
     // key background
---dark-violet: hsl(281, 89%, 26%);
+--background-btn-del-reset-theme-3: hsl(281, 89%, 26%);
 // key shadow
---vivid-magenta: hsl(285, 91%, 52%);
+--shadow-btn-del-reset-theme-3: hsl(285, 91%, 52%);
 
 // key background, toggle
 --key-theme-3: hsl(176, 100%, 44%);
 // key shadow
---soft-key-theme-3: hsl(177, 92%, 70%);
+--dark-key-theme-3: hsl(177, 92%, 70%);
 
 // key shadow
---very-dark-violet: hsl(268, 47%, 21%);
+--background-btn-theme-3: hsl(268, 47%, 21%);
 // key shadow
---dark-magenta: hsl(290, 70%, 36%);
+--shadow-btn-theme-3: hsl(290, 70%, 36%);
 }
 
 // Text
 
 :root{
 --text-theme-3: hsl(52, 100%, 62%);
---very-dark-blue: hsl(198, 20%, 13%);
-// text
---white: hsl(0, 0, 100%);
+--text-result-theme-3: hsl(198, 20%, 13%);
 }
 
 // Typography
@@ -130,15 +125,15 @@ html{
 }
 body{
     font-family: 'Spartan', sans-serif;
-    // transition: 1s ease;
-    
+    transition: 1s ease;
 }
-// .calApp-container{
-//     color: #fff;
-//     max-width: 500px;
-// }
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .calApp{
-    padding: 2.2rem;
+    width: 90%;
     max-width: 500px;
     margin: 0 auto;
 
@@ -208,45 +203,44 @@ body{
         }
     }
     &-keypad{
-        background: var(--toggle-theme-1);
         border-radius: 1rem;
         &-grid{
             display: grid;
             grid-template-columns: repeat(4,1fr);
-            gap: 1rem;
-            padding: 2.2rem ;
+            gap: 1.5rem;
+            padding: 2.2rem;
             button{
-                color: var(--text-theme-1);
                 height: 7rem;
-                border-radius: 1rem;
+                border-radius: .5rem;
+                border: none;
+                cursor: pointer;
             }
             &-btn-reset, &-btn-delete, &-btn-result{
                 text-transform: uppercase;
                 font-size: 2rem;
-            }
-            &-btn-reset, &-btn-delete{
-                background: var(--btn-del-reset-theme-1);
-            }
-            &-btn-reset, &-btn-delete, &-btn-result{
-                color: var(--white) !important;
+                color: #fff;
             }
             &-btn-reset{
                 grid-column: 1/3;
             }
             &-btn-result{
                 grid-column: 3/5;
-                background: var(--key-theme-1);
             }
             &-btn-number, &-btn-operation{
                 font-size: 3.2rem;
             }
-            
-            
+        }
+        @media (min-width:975px){
+            button{
+                height: 5rem;
+            }
+            &-grid{
+                gap: 2.2rem;
+            }
         }
     }
-    
-  
 }
+
 #theme1{
     background: var(--main-theme-1);
     .calApp{
@@ -260,12 +254,34 @@ body{
         &-screen{
             background: var(--screen-theme-1);
         }
+        &-keypad{
+            background: var(--toggle-theme-1);
+            &-grid-btn-number, &-grid-btn-operation{
+                background: var(--background-btn-theme-1);
+                color: var(--number-theme-1);
+                box-shadow: 0 4px 0 var(--shadow-btn-theme-1);
+            }
+            &-grid-btn-reset, &-grid-btn-delete{
+                background: var(--background-btn-del-reset-theme-1);
+                box-shadow: 0 4px 0 var(--shadow-btn-del-reset-theme-1);
+    
+            }
+            &-grid-btn-reset, &-grid-btn-delete{
+                background: var(--background-btn-del-reset-theme-1);
+                box-shadow: 0 4px 0 var(--shadow-btn-del-reset-theme-1);
+    
+            }
+            &-grid-btn-result{
+                background: var(--key-theme-1);
+                box-shadow: 0 4px 0 var(--dark-key-theme-1);
+            }
+        }
     }
 }
 #theme2{
     background: var(--main-theme-2);
     .calApp{
-        color: #000;
+        color: var(--text-theme-2);
         &-top-switch-btn{
             background: var(--toggle-theme-2);
             &-rounded{
@@ -274,6 +290,28 @@ body{
         }
         &-screen{
             background: var(--screen-theme-2);
+        }
+        &-keypad{
+            background: var(--toggle-theme-2);
+            &-grid-btn-number, &-grid-btn-operation{
+                background: var(--background-btn-theme-2);
+                color: var(--text-theme-2);
+                box-shadow: 0 4px 0 var(--shadow-btn-theme-2);
+            }
+            &-grid-btn-reset, &-grid-btn-delete{
+                background: var(--background-btn-del-reset-theme-2);
+                box-shadow: 0 4px 0 var(--shadow-btn-del-reset-theme-2);
+    
+            }
+            &-grid-btn-reset, &-grid-btn-delete{
+                background: var(--background-btn-del-reset-theme-2);
+                box-shadow: 0 4px 0 var(--shadow-btn-del-reset-theme-2);
+    
+            }
+            &-grid-btn-result{
+                background: var(--key-theme-2);
+                box-shadow: 0 4px 0 var(--dark-key-theme-2);
+            }
         }
     }
 }
@@ -289,6 +327,29 @@ body{
         }
         &-screen{
             background: var(--toggle-theme-3);
+        }
+        &-keypad{
+            background: var(--toggle-theme-3);
+            &-grid-btn-number, &-grid-btn-operation{
+                background: var(--background-btn-theme-3);
+                color: var(--text-theme-3);
+                box-shadow: 0 4px 0 var(--shadow-btn-theme-3);
+            }
+            &-grid-btn-reset, &-grid-btn-delete{
+                background: var(--background-btn-del-reset-theme-3);
+                box-shadow: 0 4px 0 var(--shadow-btn-del-reset-theme-3);
+    
+            }
+            &-grid-btn-reset, &-grid-btn-delete{
+                background: var(--background-btn-del-reset-theme-3);
+                box-shadow: 0 4px 0 var(--shadow-btn-del-reset-theme-3);
+    
+            }
+            &-grid-btn-result{
+                background: var(--key-theme-3);
+                box-shadow: 0 4px 0 var(--dark-key-theme-3);
+                color: var(--text-result-theme-3);
+            }
         }
     }
 }
