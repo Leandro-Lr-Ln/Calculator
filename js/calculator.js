@@ -10,20 +10,24 @@ const btnResult = document.getElementsByClassName('calApp-keypad-grid-btn-result
 
 for (let btnNumber of btnNumbers) {
     btnNumber.addEventListener('click', () => {
-        calScreen.value += [btnNumber.value];
-    })
+        calScreen.value += btnNumber.value;
+    });
 }
 for (let btnOperation of btnOperations) {
     btnOperation.addEventListener('click', () => {
         calScreen.value += btnOperation.value;
-    })
+    });
 }
 btnResult.addEventListener('click', () => {
-    calHistory.innerHTML = calScreen.value + '=';
-    let result = eval(calScreen.value);
-    calScreen.value = '';
-    calScreen.value += result;
-
+    if(calScreen.value === ''){
+        calScreen.placeholder = '0';
+        calHistory.innerHTML =  0 + '=';
+    }else{
+        calHistory.innerHTML = calScreen.value + '=';
+        let result = eval(calScreen.value);
+        calScreen.value = '';
+        calScreen.value += result;
+    }
 })
 btnReset.addEventListener('click', () => {
     calScreen.value = '';
