@@ -206,7 +206,7 @@ main{
         border-radius: 1rem;
         &-grid{
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: 1fr 1fr 1fr 1fr;
             gap: 1.5rem;
             padding: 2.2rem;
             button{
