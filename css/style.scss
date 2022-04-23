@@ -1,121 +1,54 @@
-// colors
-// theme 1
-// Backgrounds
-
 :root{
-// main background
 --main-theme-1:hsl(222, 26%, 31%);
-// toggle background, keypad background
 --toggle-theme-1:hsl(223, 31%, 20%);
-// screen background
 --screen-theme-1:hsl(224, 36%, 15%);
 }
-
-// keys
-
 :root{
-    // key background
 --background-btn-del-reset-theme-1: hsl(225, 21%, 49%);
-// key shadow
 --shadow-btn-del-reset-theme-1: hsl(224, 28%, 35%);
-
-// key background, toggle
 --key-theme-1: hsl(6, 63%, 50%);
-// key shadow
 --dark-key-theme-1: hsl(6, 70%, 34%);
-
-// key background
 --background-btn-theme-1: hsl(30, 25%, 89%);
-// key shadow
 --shadow-btn-theme-1: hsl(28, 16%, 65%);
 }
-
-// text
-
 :root{
 --number-theme-1: hsl(221, 14%, 31%);
 }
-
-// Theme 2
-// Backgrounds
-
 :root{
-// main background
 --main-theme-2: hsl(0, 0%, 90%);
-// toggle background, keypad background
 --toggle-theme-2: hsl(0, 5%, 81%);
-// screen background
 --screen-theme-2: hsl(0, 0%, 93%)
 }
-
-// keys
-
 :root{
-    // key background
 --background-btn-del-reset-theme-2: hsl(185, 42%, 37%);
-// key shadow
 --shadow-btn-del-reset-theme-2: hsl(185, 58%, 25%);
-
-// key background, toggle
 --key-theme-2: hsl(25, 98%, 40%);
-// key shadow
 --dark-key-theme-2: hsl(25, 99%, 27%);
-
-// key background
 --background-btn-theme-2: hsl(45, 7%, 89%);
-// key shadow
 --shadow-btn-theme-2: hsl(35, 11%, 61%);
 }
-
-// text 
-
 :root{
 --text-theme-2: hsl(60, 10%, 19%);
 }
-
-// Theme 3
-// Backgrounds
 :root{
-    // main background
 --main-theme-3: hsl(268, 75%, 9%);
-// main background
 --toggle-theme-3: hsl(268, 71%, 12%);
 }
-
-// Keys
-
 :root{
-    // key background
 --background-btn-del-reset-theme-3: hsl(281, 89%, 26%);
-// key shadow
 --shadow-btn-del-reset-theme-3: hsl(285, 91%, 52%);
-
-// key background, toggle
 --key-theme-3: hsl(176, 100%, 44%);
-// key shadow
 --dark-key-theme-3: hsl(177, 92%, 70%);
-
-// key shadow
 --background-btn-theme-3: hsl(268, 47%, 21%);
-// key shadow
 --shadow-btn-theme-3: hsl(290, 70%, 36%);
 }
-
-// Text
-
 :root{
 --text-theme-3: hsl(52, 100%, 62%);
 --text-result-theme-3: hsl(198, 20%, 13%);
 }
-
-// Typography
-// Body Copy
-
 :root{
-// numbers
 --font-size: 32px;
 }
-
 html{
     box-sizing: border-box;
     font-size: 62.5%;
@@ -136,13 +69,11 @@ main{
     width: 90%;
     max-width: 500px;
     margin: 0 auto;
-
     &-top{
         display: flex;
         align-items: center;
         margin-bottom: 2rem;
         font-size: 1.5rem;
-        
         &-title{
             flex: 1;
         }
@@ -179,8 +110,6 @@ main{
                
             }
         }
-
-       
     }
     &-screen{
         height: 9rem;
@@ -240,7 +169,6 @@ main{
         }
     }
 }
-
 #theme1{
     background: var(--main-theme-1);
     .calApp{
@@ -353,6 +281,3 @@ main{
         }
     }
 }
-
-
-
